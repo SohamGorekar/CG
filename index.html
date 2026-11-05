@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive 3D Solar System</title>
+  </head>
+  <body>
+    <!-- The Three.js renderer canvas is appended into this container -->
+    <div id="app"></div>
+
+    <!-- Loading screen: shown until the LoadingManager reports all textures loaded -->
+    <div id="loading-screen">
+      <div class="spinner"></div>
+      <div class="loading-title">Loading Solar System</div>
+      <div class="loading-bar"><div id="loading-bar-fill"></div></div>
+      <div id="loading-percent">0%</div>
+    </div>
+
+    <!-- Tooltip that follows the mouse when hovering a planet -->
+    <div id="tooltip"></div>
+
+    <!-- Info popup shown when a planet is clicked -->
+    <div id="info-panel">
+      <button id="info-close" title="Close">&times;</button>
+      <h2 id="info-name"></h2>
+      <p id="info-desc"></p>
+      <ul id="info-facts"></ul>
+      <button id="info-focus">Fly to this body</button>
+    </div>
+
+    <!-- Small on-screen help text -->
+    <div id="hint">
+      Drag to orbit &middot; Scroll to zoom &middot; Right-drag to pan &middot;
+      Click a planet for info &middot; <b>Double-click to fly to it</b> &middot;
+      <b>R</b> to reset view
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
